@@ -53,14 +53,15 @@ The technologies used are Semantic UI as our framework, we chose this particular
 We used exchangeratesapi.io to get currency API's and we used openweathermap.org to get daily weather information.
 
 ## Tasks 
-Tasks were assigned to Sumaya for design, Sumaya198 came up with a design in desktop and mobile version, and the weather map.
-I, Nikstar-1, concentrated on the function of the currency converter. 
+Tasks were assigned to Sumaya for design, Sumaya198 came up with a design in desktop/mobile version, and the weather map.
+I, Nikstar-1, concentrated on the function of the currency converter, and also helped with local storage, and combining our work.
 
 To check the progress of these tasks we used Git Hub Project board - we tracked progress on there and marked completed tasks. 
 
 ## Challenges 
 Nikstar-1
-The challenges I encountered on the way were to get the flags and currency in the same drop down. Another, was identifying the right API - We has a list of API's one of them were giving all currency rates in a single request, another one giving rates for two currencies specified in request. So, i needed to fix an approach, whether to get all rates in a single request, and store them to use later or get the rates after selecting currency.
+The challenges I encountered on the way were to get the flags to function using semantic UI. However, after researching I discovered the extra steps needed to this framework. Another, was identifying the right API - We had a list of API's one of them were giving all currency rates in a single request, another one giving rates for two currencies specified in request. So, i needed to fix an approach, whether to get all rates in a single request, and store them to use later or get the rates after selecting currency.
+
 ## Success's
 Nikstar-1
 To achieve all results in my browser, and see the funtionality come together.
