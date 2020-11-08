@@ -330,30 +330,25 @@ var currencyCodes = {
 // A converstion logic added devided by the first and multiplied by the second currency
 // Need to work on getting my currency converter onto the centre of the page
 $("#searchBtn").click(function (event) {
-  console.log("button ccclicked");
   getWeather();
   getFiveDayForcast();
   saveWeatherToStorage();
 });
 
 $(".currencyVal").on("change", function (e) {
-  console.log("currency selected");
   saveCurrencyLocally();
 });
 
 ///Get weather for today
 function getWeather() {
-  console.log("getWeather");
   let cityName = $("#cityname").val();
   let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=73b47f542215050a64d2b287364ee1d1`;
-  console.log("weather infor", queryURL);
 
   let KELVIN = 273.15;
 
   $.ajax({
     url: queryURL,
     success: function (result) {
-      console.log(result);
 
       const mainIcon = result.weather[0].icon;
       const mainIconLink =
@@ -365,14 +360,12 @@ function getWeather() {
       $(".temp").text(Celsius + " \u00B0C");
       $(".humidityNr").text(result.main.humidity + " %");
       $(".windValue").text(result.wind.speed + " MPH");
-
       $(".description").text(result.weather[0].description);
     },
   });
 }
 
 function getFiveDayForcast() {
-  console.log("get forcast");
   let cityName = $("#cityname").val();
   let forcastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=73b47f542215050a64d2b287364ee1d1`;
   let KELVIN = 273.15;
@@ -380,7 +373,7 @@ function getFiveDayForcast() {
   $.ajax({
     url: forcastUrl,
     success: function (resultForcast) {
-      console.log(resultForcast);
+     
 
       let C = Math.round(resultForcast.list[1].main.temp - KELVIN);
       let Celsius = C.toString();
@@ -412,13 +405,12 @@ function saveCurrencyLocally() {
     currencyTwo: $("#countryTwo").dropdown("get value"),
   };
 
-  //currencyOne.push(firstCountry);
   localStorage.setItem("currency-searched", JSON.stringify(currencyObj));
 }
 
 function loadCurrencyLocally() {
   const loadCurLocally = JSON.parse(localStorage.getItem("currency-searched"));
-  console.log("search currency", loadCurLocally);
+
   if (loadCurLocally) {
     $("#countryOne").dropdown("set selected", loadCurLocally.currencyOne);
     $("#countryTwo").dropdown("set selected", loadCurLocally.currencyTwo);
